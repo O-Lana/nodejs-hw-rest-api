@@ -1,9 +1,9 @@
-const contactsOperations = require("../../models/contacts");
+const { Contact } = require("../../models");
 const { createError } = require("../../helpers");
 
 const getContactById = async (req, res) => {
   const { id } = req.params;
-  const result = await contactsOperations.getContactById(id);
+  const result = await Contact.findById(id);
   if (!result) {
     throw createError(404, "Not found");
   }
