@@ -17,6 +17,10 @@ const contactSchema = Schema(
       type: Boolean,
       default: false,
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -43,5 +47,3 @@ module.exports = {
   Contact,
   schemas,
 };
-
-// TODO проверка доделать, timestamps
